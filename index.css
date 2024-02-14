@@ -1,3 +1,7 @@
+body {
+  background-color: #ebd1d1;
+}
+
 div {
   display: flex;
   justify-content: space-around;
@@ -35,11 +39,11 @@ table tr:nth-child(even) {
 }
 
 .high-priority {
-  color: red; /* Change color for high-priority tasks to red */
+  color: red; 
 }
 
 .low-priority {
-  color: white; /* Change color for low-priority tasks to white */
+  color: rgb(41, 255, 13); /
 }
 
 table tr:hover {
