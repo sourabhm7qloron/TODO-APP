@@ -1,4 +1,5 @@
 # TODO-APP
-This is a TODO APP where you can see schedule your work with priority set on high importance with Red colour and low importance with Green colour.
-Also, you can find a status and delete function while in status function you can check your work whether it is on pending and if you're done with it it displays completed after clicking pending button.
-Delete function is used to delete the entire row.
+This is a TODO app that helps you schedule your work. 
+It displays high-priority tasks in red and low-priority tasks in green. 
+Additionally, the app provides a status and delete function. In the status function, you can check if your work is pending or completed by clicking the "pending" button. 
+The delete function can be used to delete an entire row.
