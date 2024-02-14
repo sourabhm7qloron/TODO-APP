@@ -2,15 +2,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const taskForm = document.querySelector("form");
     const taskTableBody = document.querySelector("tbody");
 
-    // Load tasks from local storage or initialize as an empty array
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-    // Function to render tasks
     function renderTasks() {
-        // Clear the existing table rows
+
         taskTableBody.innerHTML = "";
 
-        // Loop through each task and append it to the table
         tasks.forEach(task => {
             const row = document.createElement("tr");
 
@@ -38,11 +35,11 @@ document.addEventListener("DOMContentLoaded", function() {
             const deleteButton = document.createElement("button");
             deleteButton.textContent = "Delete";
             deleteButton.addEventListener("click", function() {
-                // Remove the task from the tasks array
+
                 tasks = tasks.filter(t => t.taskName !== task.taskName);
-                // Update local storage
+
                 localStorage.setItem("tasks", JSON.stringify(tasks));
-                // Re-render the tasks
+
                 renderTasks();
             });
             deleteCell.appendChild(deleteButton);
@@ -52,10 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Render tasks initially
     renderTasks();
 
-    // Handle form submission
     taskForm.addEventListener("submit", function(event) {
         event.preventDefault();
         const taskName = document.getElementById("task").value;
@@ -66,13 +61,9 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        // Add the new task to the tasks array
         tasks.push({ taskName, priority, status: "pending" });
-        // Update local storage
         localStorage.setItem("tasks", JSON.stringify(tasks));
-        // Re-render the tasks
         renderTasks();
-        // Clear the form
         taskForm.reset();
     });
 });
